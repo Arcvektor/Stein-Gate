@@ -1,3 +1,5 @@
+https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192
+mkidir learngit                        //自定义文件夹
 git init                               //初始化代码仓库
 git add learngit.txt                   //把所有要提交的文件修改放到暂存区
 git commit -m 'add a file'             //把暂存区的所有内容提交到当前分支
@@ -16,3 +18,26 @@ git push -u origin master              //第一次把当前分支master推送到
 git push origin master                 //把当前分支master推送到远程
 git clone git@github.com:username/repostery.git                      //从远程库克隆一个到本地库
 
+git checkout -b dev                    //创建并切换分支#相当于git branch dev 和git checkout dev 
+git branch                             //查看当前分支，当前分支前有个*号
+git branch <name>                      //创建分支
+git checkout <name>                    //切换分支
+git merge <name>                       //合并某个分支到当前分支
+git branch -d <name>                   //删除分支
+git log --graph                       //查看分支合并图
+git merge --no-ff -m 'message' dev     //禁用Fast forward合并dev分支
+
+git stash                                                 //隐藏当前工作现场，等恢复后继续工作
+git stash list                                            //查看stash记录
+git stash apply                                         //仅恢复现场，不删除stash内容
+git stash drop                                          //删除stash内容
+git stash pop                                           //恢复现场的同时删除stash内容
+git branch -D <name>                              //强行删除某个未合并的分支
+
+//开发新feature最好新建一个分支
+git remote                                               //查看远程仓库
+git remote -v                                           //查看远程库详细信息
+
+git pull                                                   //抓取远程提交
+git checkout -b branch-name origin/branch-name                  //在本地创建和远程分支对应的分支
+git branch --set-upstream branch-name origin/branch-name   //建立本地分支和远程分支的关联
