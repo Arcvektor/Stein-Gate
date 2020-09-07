@@ -32,6 +32,8 @@ git stash list                         //查看stash记录
 git stash apply                        //仅恢复现场，不删除stash内容
 git stash drop                         //删除stash内容
 git stash pop                          //恢复现场的同时删除stash内容
+git stash apply stash@{0}              //恢复指定的stash内容
+git cherry-pick <版本号>               //复制一分支版本的特定提交到本分支
 git branch -D <name>                   //强行删除某个未合并的分支
 
 //开发新feature最好新建一个分支
@@ -40,3 +42,10 @@ git remote -v                                            //查看远程库详细
 git pull                                                 //抓取远程提交
 git checkout -b branch-name origin/branch-name           //在本地创建和远程分支对应的分支
 git branch --set-upstream branch-name origin/branch-name //建立本地分支和远程分支的关联
+
+
+
+
+
+
+
