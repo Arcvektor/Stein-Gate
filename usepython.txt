@@ -1,0 +1,119 @@
+
+--------------------------------------------python 基础语法-------------------------------------------------------
+a**b				    	//a的b次方
+r'' ,r'''...'''                     	//''内字符不转义
+'''...'''                           	//print多行字符
+b'bytes'.decode('utf-8')	    	//将字节转换为str
+len('str')			    	//计算str字符数或字节数
+# -*- coding: utf-8 -*-		    	//以UTF-8读取源代码
+'%s' % 'str'                        	//字符串占位符，d为整数，f为浮点数,x为十六进制整数,%%自转义
+'{0}{1:.1f}'.format('str',num)      	//占位符和限定数字类型的占位符
+list.append()				//向列表末尾插入元素
+list.insert(i,element)		    	//在列表中插入元素
+list.pop(i)			    	//在列表中删除元素
+list[]   tuple() 		    	//列表的表示方法，list元素可变，tuple不可(元素均从0开始计数)
+if<statement>:         		    	//
+	...			    	//
+elif<statement>:		    	//
+	...			    	//
+else:				    	//
+	...			    	//if-else 判断语句
+num = int(str)			    	//将str数据转化为整数类型
+for element in list		    	//for语句，element的名字可直接新建
+range()				    	//生成从0开始的整数序列
+d {'key1':value1,}		    	//生成字典
+d ['key']			    	//查询字典（输出value）
+d ['key'] = value			//向字典内添加元素
+d.get('key',value)			//没value是查询key，有value生成key
+replace(A,B)				//替换元素（list这种可变的才有用）
+
+
+
+
+-------------------------------------------------函数-----------------------------------------------------------
+def function_name()			//定义函数
+int()					//字符串，浮点数等整数化
+float()					//字符串浮点数化
+str()					//字符串化
+bool()					//布尔化，1输出为True，其余为False
+return 'done'				//当只想输出print时，可返回'done'
+raise Error('Error_description')	//错误提示，中断运行
+def function_name(**kw)			//关键字参数形成字典
+def fuction_name(*,arg,b,c)		//*以后的均为关键字参数，限制关键字名字	//或def function_name(*arg,b,c)
+def function_name(*arg)			//arg内的元素可自动填充前面的缺省值
+
+
+
+--------------------------------------------------进阶语法--------------------------------------------------------
+list[a:b]				//从a+1个切片到第b个
+list[:b]				//从第一个切片到第b个
+list[-a:-b]				//从倒数第a个切片到倒数第b个
+list[-a:]				//从倒数第a个切片到倒数第一个
+list[:a:b]				//前a个数每b个取一个
+for element in list			//for循环
+calculation for x in list if		//for循环用于数值计算
+a+b for a in list1 for b in list2	//二维数组运算
+lower()					//小写化
+isinstance(list, fuction)		//判断内容是否满足一定条件
+g = (cal for x in list)			//生成器（小括号）
+yield()					//将函数变为生成器，遇到yield会暂停，下次继续从这里开始
+from collections.abc import Iterable
+isinstance([], Iterable)		//判断对象是否可以迭代
+  except StopIteration:
+        break				//遇到StopIteration就退出循环，用于for语句中提示生成器生成完毕
+map(function_name , list)		//对list内的元素依次进行函数运算
+from functools import reduce		//引入reduce函数
+reduce (function_name, list)		//对list内元素进行套娃运算,如f(f(x1,x2),x3)
+filter(function_name , list)		//对list内元素进行运算后根据布尔值选择是否过滤
+sorted(list , key = )			//按一定规律排序，不指定即为按大小和ASCII,reverse=True表示反向
+lambda x: calculation(x)		//匿名函数，x为函数参数
+def function_name(x,y)：
+	return lambda： cal(x,y)		//将匿名函数作为函数值返回
+function_name.__name__			//展示函数名字
+@log					//在调用后续函数时将这个函数自身用于log函数中，@log起装饰器作用
+
+import functools
+
+def log(text):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kw):
+            print('%s %s():' % (text, func.__name__))
+            return func(*args, **kw)
+        return wrapper
+    return decorator			//装饰器整体用法
+
+import functools			//
+functools.patrial(function_name, )	//构造偏函数，相当于对function_name作用的list后面加上*args,**kw
+
+
+-------------------------------------------------------面向对象------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
